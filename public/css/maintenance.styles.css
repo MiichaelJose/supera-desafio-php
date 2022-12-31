@@ -21,12 +21,21 @@
 }
 
 .get-maintenance {
+    display: none;
     width: 100%;
 }
 
 .post-maintenance {
     display: flex;
-    height: 250px;
+    justify-content: space-evenly;
+}
+
+.put-maintenance {
+    display: none;
+}
+
+.delete-maintenance {
+    display: none;
 }
 
 .card-put, .card-delete {

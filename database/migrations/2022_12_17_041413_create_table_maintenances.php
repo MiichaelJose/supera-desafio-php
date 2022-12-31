@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('vehicle_id')->constrained('vehicles');
-            $table->text('description')->default('');
-            $table->text('registration_date')->default('');
-            $table->text('analysis_date')->default('');
-            $table->text('start_date')->default('');
-            $table->text('final_date')->default('');
+            $table->string('description');
+            $table->string('registration_date');
+            $table->string('analysis_date');
+            $table->string('start_date');
+            $table->string('final_date');
         });
     }
 
