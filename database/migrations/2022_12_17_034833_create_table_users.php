@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('cpf');
             $table->string('password');
-            $table->string('role');
+            $table->string('role')->default('user');
         });
     }
 

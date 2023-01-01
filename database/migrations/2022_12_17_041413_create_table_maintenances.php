@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('vehicle_id')->constrained('vehicles');
             $table->string('description');
-            $table->string('registration_date');
-            $table->string('analysis_date');
-            $table->string('start_date');
-            $table->string('final_date');
+            $table->date('registration_date')->default(\Carbon\Carbon::now()->toDateString());
+            $table->date('analysis_date')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('final_date')->nullable();
         });
     }
 
