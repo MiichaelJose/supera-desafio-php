@@ -50,11 +50,11 @@
         @csrf
         @method('PUT')
         <h4>data de analise</h4>
-        <input name="analysis_date" type="text">
+        <input name="analysis_date" type="date">
         <h4>data de inicio</h4>
-        <input name="start_date" type="text">
+        <input name="start_date" type="date">
         <h4>data de finalização</h4>
-        <input name="final_date" type="text">
+        <input name="final_date" type="date">
 
         <button type="submit" >alterar</button>
     </div>

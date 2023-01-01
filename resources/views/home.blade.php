@@ -7,11 +7,11 @@
 @section('nav')
 <ul>
     <li><a href="#" onclick="listMaintenance()">listar manutenções</a> </li>
-    <li onclick="listUsers()"><a href="{{ route('user.view') }}">veiculos</a></li>
+    <li onclick="listUsers()"><a href="#">veiculos</a></li>
     <div class="admin-users">
         @if (session()->has('user'))
             @if (session()->get('user.role') == 'admin')
-                <li><a href="#">clientes</a> </li>
+                <li><a href="{{ route('user.view') }}">clientes</a></li>
             @endif
         @endif
     </div>
@@ -21,13 +21,14 @@
 @section('header-content')
 <h2>manutenções</h2>
 
-<div class="admin-maintenance">
-    @if (session()->has('user'))
-        @if (session()->get('user.role') == 'admin')
+@if (session()->has('user'))
+    @if (session()->get('user.role') == 'admin')
+        <div class="admin-maintenance">
             <a href="{{ route('maintenance.view') }}" class="link-maintenance">cadastrar manutenção</a>
-        @endif
+        </div>
     @endif
-</div>
+@endif
+
 @endsection
 
 @section('content')
