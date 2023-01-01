@@ -21,9 +21,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User;
+        $user->name = $request->name;
         $user->cpf = $request->cpf;
         $user->password = bcrypt($request->password);
-        $user->cargo = 'usuario';
         $user->save();
 
         return redirect('user')->with('status', 'Cadastrado com sucesso!');
