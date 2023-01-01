@@ -1,0 +1,50 @@
+.post-user {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.get-user {
+    height: 100%;
+    width: 100%;
+}
+
+.user {
+    width: 100%;
+    max-width: 450px;
+    display: none;
+    padding-inline: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray);
+}
+
+
+.get-user::-webkit-scrollbar {
+    width: 5px;
+    height: 15px;
+    margin-right: 15px; 
+    padding: 15px;
+}
+
+.get-user::-webkit-scrollbar-thumb {
+    background-color: var(--orange); 
+    border-radius: 20px;  
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    height: 100px;
+}
+
+.list {
+    display: none;
+}
+
+.list > div {
+    align-items: center;
+}
