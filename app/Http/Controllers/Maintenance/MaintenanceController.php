@@ -32,7 +32,7 @@ class MaintenanceController extends Controller
         $maintenance = new Maintenance;
         $maintenance->vehicle_id = $request->vehicle_id;
         $maintenance->description = $request->description;
-        $maintenance->registration_date = now();
+        
         $maintenance->save();
 
         return redirect()->route('maintenance.view')->with('status', 'Cadastrado com sucesso!');
