@@ -49,11 +49,21 @@
 </form>
 
 <form class='form put-user' method="POST">
-    
+    <div class="card-put">
+
+    </div>
 </form>
 
 <form class='form delete-user' method="POST">
-    
+    <div class="card-delete">
+
+    </div>
+    <div class='info-delete'>
+        @csrf
+        @method('DELETE')
+        <p>deseja remover esse usuário?</p>
+        <button type="submit" >remover</button>
+    </div>
 </form>
 
 

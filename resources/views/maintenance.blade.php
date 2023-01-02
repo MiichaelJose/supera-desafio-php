@@ -81,7 +81,7 @@
 
 @section('info')
 
-<div class="card maintenance list">
+<div class="card maintenance">
     <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2019/11/hr_3955.cr2_.jpg?quality=70&strip=info" alt="">
     <div class="card__texts">
         <div>
