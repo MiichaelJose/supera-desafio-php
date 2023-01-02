@@ -23,6 +23,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index')->name('user.index');
     Route::get('/user/{id}', 'show')->name('user.show');
     Route::get('/user', 'view')->name('user.view');
+    Route::delete('/user/{id}', 'destroy')->name('user.destroy');
 });
 
 Route::controller(VehicleController::class)->group(function () {
