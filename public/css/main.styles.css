@@ -106,16 +106,18 @@ li {
 .form {
     margin-top: 25px;
     margin-inline: auto;
-    /* height: 100%; */
     max-height: 550px;
     flex-direction: column;
 }
 
 .card {
     margin: auto;
-    max-height: 200px;
+    height: 400px;
+    text-align: center;
+    align-items: center;
     border-radius: 20px;
     margin-top: 15px;
+    flex-direction: column;
 }
 
 .card .card__texts p {
@@ -123,9 +125,8 @@ li {
 }
 
 .card img {
-    width: fit-content;
-    max-width: 80px;
-    height: 80px;
+    width: 255px;
+    height: 255px;
 }
 
 
@@ -146,14 +147,10 @@ li {
     }
 
     .card {
-        /* width: 100%;
-        max-width: 550px; */
-        height: 150px;
-        border-radius: 20px;
+        flex-direction: row;
         padding-inline: 15px;
         justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
+        height: 150px;
     }
 
     .card .card__texts {
@@ -167,9 +164,8 @@ li {
     }
 
     .card img {
-        width: fit-content;
-        max-width: 80px;
-        height: 80px; 
+        width: 90px;
+        height: 90px; 
         margin-top: 0; 
     }
 }

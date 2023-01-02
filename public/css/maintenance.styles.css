@@ -3,19 +3,20 @@
 }
 
 .maintenance {
+    width: 100%;
+    max-width: 450px;
+    display: none;
+    padding-inline: 10px;
     background-color: var(--gray);
 }
 
-.card {
-    width: 100%;
-    max-width: 450px;
-}
-
-.card .card__texts {
+.maintenance .card__texts {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
     display: flex;
+    text-align: left;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -41,12 +42,9 @@
 }
 
 .delete-maintenance {
+    width: 100%;
+    height: 100%;
     display: none;
-}
-
-.card-put, .card-delete {
-    width: 470px;
-    height: 170px;
 }
 
 .put-maintenance > .inputs-put {
@@ -60,11 +58,13 @@
 }
 
 .info-delete {
-    height: 20%;
+    height: 75px;
+    margin: 15px auto;
     width: 100%;
     max-width: 220px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -92,12 +92,4 @@
     align-items: center;
     width: 90px;
     height: 100px;
-}
-
-.list {
-    display: none;
-}
-
-.list > div {
-    align-items: center;
 }

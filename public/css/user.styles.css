@@ -1,3 +1,14 @@
+.user {
+    width: 100%;
+    max-width: 450px;
+    display: none;
+    height: 150px;
+    padding-inline: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray);
+}
+
 .post-user {
     display: flex;
     height: 100%;
@@ -7,18 +18,25 @@
 .get-user {
     height: 100%;
     width: 100%;
-}
-
-.user {
-    width: 100%;
-    max-width: 450px;
     display: none;
-    padding-inline: 10px;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--gray);
 }
 
+.delete-user {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.info-delete {
+    height: 75px;
+    margin: 15px auto;
+    width: 100%;
+    max-width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
 
 .get-user::-webkit-scrollbar {
     width: 5px;
@@ -30,6 +48,15 @@
 .get-user::-webkit-scrollbar-thumb {
     background-color: var(--orange); 
     border-radius: 20px;  
+}
+
+.info-delete {
+    height: 20%;
+    width: 100%;
+    max-width: 220px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .buttons {
