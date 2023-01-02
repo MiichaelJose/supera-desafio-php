@@ -62,8 +62,8 @@ function createCard(data) {
     });
 
     buttonAlt.addEventListener('click', (btn) => {
-        modalPutMaintenance(btn.target, btn.target.getAttribute('id'));
-    })
+        modal_put_maintenance(btn.target, btn.target.getAttribute('id'));
+    });
   
     p[0].innerHTML = data.vehicle_id.model;
     p[1].innerHTML = data.vehicle_id.brand;
@@ -119,7 +119,7 @@ function modal_delete_maintenance(button, id) {
     form_delete_maintenance.setAttribute('action', 'http://127.0.0.1:8000/maintenance-delete/' +  id);
 }
 
-function modalPutMaintenance(button, id) {
+function modal_put_maintenance(button, id) {
     const form_get_maintenance = document.querySelector('.get-maintenance');
     form_get_maintenance.style.display = 'none';
     form_put_maintenance.style.display = 'flex';
