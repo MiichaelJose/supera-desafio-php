@@ -9,6 +9,7 @@ use \Illuminate\Http\Response;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\UserCollection;
 use App\Models\User;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserController extends Controller
 {
@@ -46,6 +47,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
+
+        // $user = User::onlyTrashed()->findOrFail($id);
+        // $user->forceDelete();
 
         return redirect('user')->with('status', 'Deletado com sucesso!');
     }
