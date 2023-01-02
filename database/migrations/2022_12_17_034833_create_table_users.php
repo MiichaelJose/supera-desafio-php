@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('password');
             $table->string('role')->default('user');
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

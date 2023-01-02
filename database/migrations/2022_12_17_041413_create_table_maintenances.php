@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id')->constrained('vehicles');
+            $table->foreignId('vehicle_id')->constrained()->on('vehicles')->onDelete('cascade');;
             $table->string('description');
             $table->date('registration_date')->default(\Carbon\Carbon::now()->toDateString());
             $table->date('analysis_date')->nullable();
