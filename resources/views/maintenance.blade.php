@@ -8,7 +8,7 @@
 @section('nav')
 <ul>
     <li><a href="{{ route('home') }}"><- voltar</a> </li>
-    <li><a onclick="modalListVehicle()">lista</a></li>
+    <li><a onclick="modal_list_vehicle()">lista</a></li>
     <li><a href="{{ route('maintenance.view') }}">cadastrar</a></li>
 </ul>
 @endsection
@@ -25,6 +25,7 @@
 @endsection
 
 @section('content')
+
 
 
 <form class='form post-maintenance' method="POST" action="{{ route('maintenance.store') }}">
@@ -49,6 +50,9 @@
     <div class='inputs-put'>
         @csrf
         @method('PUT')
+        <h4>veiculo</h4>
+        <select name="vehicle_id" id="select-vehicles-put">
+        </select>
         <h4>data de analise</h4>
         <input name="analysis_date" type="date">
         <h4>data de inicio</h4>
@@ -75,7 +79,6 @@
 <form class='form get-maintenance' method="POST">
     
 </form>
-
 
 @endsection
 

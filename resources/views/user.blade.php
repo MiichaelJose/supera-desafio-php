@@ -8,7 +8,7 @@
 @section('nav')
 <ul>
     <li><a href="{{ route('home') }}"><- voltar</a> </li>
-    <li><a onclick="modalListUsers()">lista</a></li>
+    <li><a onclick="modal_list_users()">lista</a></li>
     <li><a href="{{ route('user.view') }}">cadastrar</a></li>
 </ul>
 @endsection
@@ -51,6 +51,18 @@
 <form class='form put-user' method="POST">
     <div class="card-put">
 
+    </div>
+    <div class='inputs-put'>
+        @csrf
+        @method('PUT')
+        <h4>nome</h4>
+        <input name="name" type="text">
+        
+        <h4>cpf</h4>
+        <input name="cpf" type="text">
+
+        <h4>senha</h4>
+        <input name="password" type="text">
     </div>
 </form>
 

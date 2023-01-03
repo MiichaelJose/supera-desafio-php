@@ -6,8 +6,8 @@
 
 @section('nav')
 <ul>
-    <li><a href="#" onclick="listMaintenance()">listar manutenções</a> </li>
-    <li onclick="listUsers()"><a href="#">veiculos</a></li>
+    <li><a href="#" onclick="list_maintenance()">listar manutenções</a> </li>
+    <li><a href="{{ route('vehicle.view') }}">veiculos</a></li>
     <div class="admin-users">
         @if (session()->has('user'))
             @if (session()->get('user.role') == 'admin')
