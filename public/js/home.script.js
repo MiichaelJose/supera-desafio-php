@@ -1,7 +1,7 @@
 console.log('user');
 
-function listMaintenance() {
-    fetch('http://localhost:8000/maintenance')
+function list_maintenance() {
+    fetch('http://localhost:8000/maintenance/lista')
     .then(resp => resp.json())
     .then(data => {
         console.log(data);

@@ -4,38 +4,33 @@ const form_post_user = document.querySelector('.post-user')
 const form_delete_user = document.querySelector('.delete-user');
 
 
-function modalListUsers() {
+function modal_list_users() {
     form_post_user.style.display = 'none';
     form_put_user.style.display = 'none';
-    list();
+    list_users();
 }
 
-function list() {
-    console.log('entrou');
+function list_users() {
     form_delete_user.style.display = 'none';
 
     form_put_user.style.display = 'none';
 
     form_get_user.style.display = 'flex';
 
-    //form_get_user.innerHTML = "";
-
-    fetch('http://localhost:8000/users')
+    fetch('http://localhost:8000/user/lista')
     .then(resp => resp.json())
     .then(content => {
         console.log(content);
         content.data.forEach(e => {
-            
-            createCard(e);
+            create_card(e);
         });
     })
 }
 
-function createCard(data) {
+function create_card(data) {
 
     const card = document.querySelector('.user').cloneNode(true);
 
-    console.log(card);
     const buttonAlt = card.querySelectorAll('button')[0];
     const buttonDele = card.querySelectorAll('button')[1];
 
@@ -71,17 +66,17 @@ function modal_delete_user(button, id) {
     const card = button.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_delete.appendChild(card);
-    form_delete_user.setAttribute('action', 'http://127.0.0.1:8000/user/' +  id);
+    form_delete_user.setAttribute('action', 'http://127.0.0.1:8000/user/deletar/' +  id);
 }
 
 function modal_put_user(button, id) {
-    const form_get_maintenance = document.querySelector('.get-maintenance');
-    form_get_maintenance.style.display = 'none';
-    form_put_maintenance.style.display = 'flex';
-    const area_card_put = form_put_maintenance.querySelector('.card-put');
+    const form_get_user = document.querySelector('.get-user');
+    form_get_user.style.display = 'none';
+    form_put_user.style.display = 'flex';
+    const area_card_put = form_put_user.querySelector('.card-put');
     area_card_put.innerHTML = "";
     const card = button.parentNode.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_put.appendChild(card);
-    form_put_maintenance.setAttribute('action', 'http://127.0.0.1:8000/user/' +  id);
+    form_put_user.setAttribute('action', 'http://127.0.0.1:8000/user/alterar/' +  id);
 }
