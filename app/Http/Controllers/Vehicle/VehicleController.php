@@ -20,6 +20,10 @@ class VehicleController extends Controller
         return new VehicleCollection($vehicles);
     }
 
+    public function view() {
+        return view('vehicle');
+    }
+
     public function store(Request $request)
     {
         Vehicle::create([
@@ -33,7 +37,7 @@ class VehicleController extends Controller
 
         return redirect('/home');
     }
-
+    
     public function show($id)
     {
         $vehicle = Vehicle::with('user')->first();
