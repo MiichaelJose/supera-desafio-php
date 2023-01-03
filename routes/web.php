@@ -19,33 +19,27 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::controller(UserController::class)->group(function () {
-    Route::post('/user/post', 'store')->name('user.store');
-    Route::get('/users', 'index')->name('user.index');
-    Route::get('/user/{id}', 'show')->name('user.show');
+    Route::post('/user/cadastrar', 'store')->name('user.store');
+    Route::get('/user/lista', 'index')->name('user.index');
+    Route::get('/user/listar/{id}', 'show')->name('user.show');
     Route::get('/user', 'view')->name('user.view');
-    Route::delete('/user/{id}', 'destroy')->name('user.destroy');
+    Route::delete('/user/deletar/{id}', 'destroy')->name('user.destroy');
 });
 
 Route::controller(VehicleController::class)->group(function () {
-    //Route::post('/vehicle/post', 'store')->name('vehicle.store');
-    Route::get('/vehicle', 'index')->name('vehicle.index');
-    Route::get('/vehicle/{id}', 'show')->name('vehicle.show');
+    Route::get('/vehicle/lista', 'index')->name('vehicle.index');
+    Route::post('/vehicle/cadastrar', 'store')->name('vehicle.store');
+    Route::get('/vehicle/listar/{id}', 'show')->name('vehicle.show');
+    Route::put('/vehicle/alterar/{id}', 'update')->name('vehicle.update');
+    Route::delete('/vehicle/deletar/{id}', 'destroy')->name('vehicle.destroy');
+    Route::get('/vehicle', 'view')->name('vehicle.view');
 });
 
 Route::controller(MaintenanceController::class)->group(function () {
-    Route::put('/maintenance-update/{id}', 'update')->name('maintenance.alterar');
-    Route::get('/maintenance-lists', 'index')->name('maintenance.index');
-    Route::get('/maintenance-list/{id}', 'show')->name('maintenance.show');
-    Route::get('/maintenance-view', 'view')->name('maintenance.view');
-    Route::delete('/maintenance-delete/{id}', 'destroy')->name('maintenance.destroy');
-    Route::post('/maintenance-create', 'store')->name('maintenance.store');
+    Route::put('/maintenance/alterar/{id}', 'update')->name('maintenance.update');
+    Route::get('/maintenance/lista', 'index')->name('maintenance.index');
+    Route::get('/maintenance/listar/{id}', 'show')->name('maintenance.show');
+    Route::get('/maintenance', 'view')->name('maintenance.view');
+    Route::delete('/maintenance/deletar/{id}', 'destroy')->name('maintenance.destroy');
+    Route::post('/maintenance/cadastrar', 'store')->name('maintenance.store');
 });
-
-// Route::put('/maintenance/{id}', [MaintenanceController::class, 'update'])->name('maintenance.alterar');
-
-// Route::get('/maintenance/list', [MaintenanceController::class, 'index'])->name('maintenance.index');
-// //Route::get('/maintenance/{id}', 'show')->name('maintenance.show');
-// Route::get('/maintenance', [MaintenanceController::class, 'view'])->name('maintenance.view');
-// // Route::get('/maintenance/{id}', 'show')->name('maintenance.show');
-// Route::delete('/maintenance/{id}', [MaintenanceController::class, 'destroy'])->name('maintenance.destroy');
-// Route::post('/maintenance', [MaintenanceController::class, 'store'])->name('maintenance.store');
