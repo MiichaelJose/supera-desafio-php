@@ -47,10 +47,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
-
-        // $user = User::onlyTrashed()->findOrFail($id);
-        // $user->forceDelete();
-
         return redirect('user')->with('status', 'Deletado com sucesso!');
     }
 }

@@ -10,6 +10,7 @@ use App\Http\Resources\MaintenanceResource;
 
 use App\Models\Maintenance;
 use App\Models\Vehicle;
+use Carbon\Carbon;
 
 use Log;
 
@@ -24,6 +25,15 @@ class MaintenanceController extends Controller
     {
         $maintenance = Maintenance::all();
         return new MaintenanceCollection($maintenance);
+    }
+
+    public function listDate()
+    {
+        $maintenances = Maintenance::whereDate('analysis_date', '>=', Carbon::today())
+        ->whereDate('analysis_date', '<=', Carbon::tomorrow()->addDays(7))
+        ->get();
+       
+        return new MaintenanceCollection($maintenances);
     }
 
     public function store(Request $request)
