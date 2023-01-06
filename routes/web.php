@@ -38,6 +38,7 @@ Route::controller(VehicleController::class)->group(function () {
 Route::controller(MaintenanceController::class)->group(function () {
     Route::put('/maintenance/alterar/{id}', 'update')->name('maintenance.update');
     Route::get('/maintenance/lista', 'index')->name('maintenance.index');
+    Route::get('/maintenance/data', 'listDate')->name('maintenance.date');
     Route::get('/maintenance/listar/{id}', 'show')->name('maintenance.show');
     Route::get('/maintenance', 'view')->name('maintenance.view');
     Route::delete('/maintenance/deletar/{id}', 'destroy')->name('maintenance.destroy');
