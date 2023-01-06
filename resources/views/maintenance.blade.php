@@ -27,7 +27,6 @@
 @section('content')
 
 
-
 <form class='form post-maintenance' method="POST" action="{{ route('maintenance.store') }}">
     @csrf
     @method('POST')

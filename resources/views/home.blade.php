@@ -21,17 +21,24 @@
 @section('header-content')
 <h2>manutenções</h2>
 
-@if (session()->has('user'))
-    @if (session()->get('user.role') == 'admin')
-        <div class="admin-maintenance">
+<div class="admin-maintenance">
+    @if (session()->has('user'))
+        @if (session()->get('user.role') == 'admin')
             <a href="{{ route('maintenance.view') }}" class="link-maintenance">cadastrar manutenção</a>
-        </div>
+        @endif
     @endif
-@endif
+</div>
 
 @endsection
 
 @section('content')
+
+<div onload="list_maintenance()"></div>
+
+@endsection
+
+@section('info')
+
 <div class="card maintenance">
     <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2019/11/hr_3955.cr2_.jpg?quality=70&strip=info" alt="">
     <div class="card__texts">
@@ -47,39 +54,9 @@
             <p>iniciada: ---</p>
             <p>finalizada: ---</p>
         </div>
-        
-    </div>
-</div>
-<div class="card vehicle">
-    <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2019/11/hr_3955.cr2_.jpg?quality=70&strip=info" alt="">
-    <div class="card__texts">
-        <div>
-            <p>Chevrolet</p>
-            <p>Onix</p>
-            <p>2023</p>
-        </div>
-        <div>
-            <p>data de cadastro: 24/10/2022</p>
-        </div>
     </div>
 </div>
 
-<div class="card vehicle">
-    <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2019/11/hr_3955.cr2_.jpg?quality=70&strip=info" alt="">
-    <div class="card__texts">
-        <div>
-            <p>Chevrolet</p>
-            <p>Onix</p>
-            <p>2023</p>
-        </div>
-        <div>
-            <p>data de cadastro: 24/10/2022</p>
-        </div>
-    </div>
-</div>
-@endsection
-
-@section('info')
 <ul>
     <li> <div id="box" style="background: #FADCD9"></div>analíse</li>
     <li> <div id="box" style="background: #ACEEF3"></div>inicializado</li>
