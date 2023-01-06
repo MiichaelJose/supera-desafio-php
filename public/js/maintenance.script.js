@@ -1,7 +1,7 @@
-const form_get_maintenance = document.querySelector('.get-maintenance');
-const form_put_maintenance = document.querySelector('.put-maintenance');
-const form_post_maintenance = document.querySelector('.post-maintenance')
-const form_delete_maintenance = document.querySelector('.delete-maintenance');
+const form_get = document.querySelector('.get-maintenance');
+const form_put = document.querySelector('.put-maintenance');
+const form_post = document.querySelector('.post-maintenance')
+const form_delete = document.querySelector('.delete-maintenance');
 
 function list_vehicle() {
     const select = document.querySelector('#select-vehicles');
@@ -36,10 +36,10 @@ function list_vehicle_put() {
 }
 
 function list_maintenance() {
-    form_delete_maintenance.style.display = 'none';
-    form_put_maintenance.style.display = 'none';
-    form_get_maintenance.style.display = 'flex';
-    form_get_maintenance.innerHTML = "";
+    form_delete.style.display = 'none';
+    form_put.style.display = 'none';
+    form_get.style.display = 'flex';
+    form_get.innerHTML = "";
 
     fetch('http://localhost:8000/maintenance/lista')
     .then(resp => resp.json())
@@ -83,40 +83,40 @@ function create_card(data) {
     p[6].innerHTML = "iniciada: " + data.start_date;
     p[7].innerHTML = "finalizada: " + data.final_date;
 
-    form_get_maintenance.appendChild(card);
+    form_get.appendChild(card);
 }
 
 
 function modal_list_vehicle() {
-    form_post_maintenance.style.display = 'none';
-    form_put_maintenance.style.display = 'none';
+    form_post.style.display = 'none';
+    form_put.style.display = 'none';
 
     list_maintenance();
 }
 
 function modal_delete_maintenance(button, id) {
-    const form_get_maintenance = document.querySelector('.get-maintenance');
-    form_get_maintenance.style.display = 'none';
-    form_delete_maintenance.style.display = 'flex';
-    const area_card_delete = form_delete_maintenance.querySelector('.card-delete');
+    const form_get = document.querySelector('.get-maintenance');
+    form_get.style.display = 'none';
+    form_delete.style.display = 'flex';
+    const area_card_delete = form_delete.querySelector('.card-delete');
     area_card_delete.innerHTML = "";
     const card = button.parentNode.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_delete.appendChild(card);
-    form_delete_maintenance.setAttribute('action', 'http://127.0.0.1:8000/maintenance/deletar/' +  id);
+    form_delete.setAttribute('action', 'http://127.0.0.1:8000/maintenance/deletar/' +  id);
 }
 
 function modal_put_maintenance(button, id) {
-    const form_get_maintenance = document.querySelector('.get-maintenance');
-    form_get_maintenance.style.display = 'none';
-    form_put_maintenance.style.display = 'flex';
-    const area_card_put = form_put_maintenance.querySelector('.card-put');
+    const form_get = document.querySelector('.get-maintenance');
+    form_get.style.display = 'none';
+    form_put.style.display = 'flex';
+    const area_card_put = form_put.querySelector('.card-put');
     area_card_put.innerHTML = "";
     const card = button.parentNode.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_put.appendChild(card);
     list_vehicle_put();
-    form_put_maintenance.setAttribute('action', 'http://127.0.0.1:8000/maintenance/alterar/' +  id);
+    form_put.setAttribute('action', 'http://127.0.0.1:8000/maintenance/alterar/' +  id);
 }
 
 list_vehicle()

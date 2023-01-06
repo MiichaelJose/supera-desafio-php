@@ -14,8 +14,9 @@ function info() {
     const a_maintenance = document.createElement('a')
     
     a_clientes.innerHTML = 'clientes';
+    a_clientes.href = 'user'
     a_maintenance.innerHTML = 'cadastrar manutenções';
-    a_maintenance.href = 'maintenance-view'
+    a_maintenance.href = 'maintenance'
 
     li.appendChild(a_clientes);
     

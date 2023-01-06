@@ -1,7 +1,7 @@
-const form_get_vehicle = document.querySelector('.get-vehicle');
-const form_put_vehicle = document.querySelector('.put-vehicle');
-const form_post_vehicle = document.querySelector('.post-vehicle')
-const form_delete_vehicle = document.querySelector('.delete-vehicle');
+const form_get = document.querySelector('.get-vehicle');
+const form_put = document.querySelector('.put-vehicle');
+const form_post = document.querySelector('.post-vehicle')
+const form_delete = document.querySelector('.delete-vehicle');
 
 function list_users() {
     const select = document.querySelector('#select-users');
@@ -36,16 +36,11 @@ function list_users_put() {
 }
 
 function list_vehicles() {
+    form_delete.style.display = 'none';
+    form_put.style.display = 'none';
+    form_get.style.display = 'flex';
 
-    form_delete_vehicle.style.display = 'none';
-
-
-    form_put_vehicle.style.display = 'none';
-
-
-    form_get_vehicle.style.display = 'flex';
-
-    form_get_vehicle.innerHTML = "";
+    form_get.innerHTML = "";
 
     fetch('http://localhost:8000/vehicle/lista')
     .then(resp => resp.json())
@@ -57,7 +52,6 @@ function list_vehicles() {
 }
 
 function create_card(data) {
-
     const card = document.querySelector('.vehicle').cloneNode(true);
 
     const buttonAlt = card.querySelectorAll('button')[0];
@@ -88,37 +82,37 @@ function create_card(data) {
     p[4].innerHTML = data.user_id.name;
     p[5].innerHTML = data.user_id.cpf;
 
-    form_get_vehicle.appendChild(card);
+    form_get.appendChild(card);
 }
 
 function modal_delete_vehicle(button, id) {
-    const form_get_vehicle = document.querySelector('.get-vehicle');
-    form_get_vehicle.style.display = 'none';
-    form_delete_vehicle.style.display = 'flex';
-    const area_card_delete = form_delete_vehicle.querySelector('.card-delete');
+    const form_get = document.querySelector('.get-vehicle');
+    form_get.style.display = 'none';
+    form_delete.style.display = 'flex';
+    const area_card_delete = form_delete.querySelector('.card-delete');
     area_card_delete.innerHTML = "";
     const card = button.parentNode.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_delete.appendChild(card);
-    form_delete_vehicle.setAttribute('action', 'http://127.0.0.1:8000/maintenance/deletar/' +  id);
+    form_delete.setAttribute('action', 'http://127.0.0.1:8000/maintenance/deletar/' +  id);
 }
 
 function modal_put_vehicle(button, id) {
-    const form_get_vehicle = document.querySelector('.get-vehicle');
-    form_get_vehicle.style.display = 'none';
-    form_put_vehicle.style.display = 'flex';
-    const area_card_put = form_put_vehicle.querySelector('.card-put');
+    const form_get = document.querySelector('.get-vehicle');
+    form_get.style.display = 'none';
+    form_put.style.display = 'flex';
+    const area_card_put = form_put.querySelector('.card-put');
     area_card_put.innerHTML = "";
     const card = button.parentNode.parentNode.parentNode;
     card.querySelector('.buttons').style.display = 'none';
     area_card_put.appendChild(card);
     list_users_put()
-    form_put_vehicle.setAttribute('action', 'http://127.0.0.1:8000/maintenance/alterar/' +  id);
+    form_put.setAttribute('action', 'http://127.0.0.1:8000/maintenance/alterar/' +  id);
 }
 
 function modal_list_users() {
-    form_post_vehicle.style.display = 'none';
-    form_put_vehicle.style.display = 'none';
+    form_post.style.display = 'none';
+    form_put.style.display = 'none';
 
     list_vehicles();
 }
