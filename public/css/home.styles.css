@@ -3,8 +3,21 @@
 }
 
 .maintenance {
-    max-height: 265px;
+    width: 100%;
+    max-width: 450px;
+    display: none;
+    padding-inline: 10px;
     background-color: var(--gray);
+}
+
+.maintenance .card__texts {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #box {
